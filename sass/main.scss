@@ -1,0 +1,14 @@
+@import 'susy';
+
+$susy: (
+  'columns': susy-repeat(6, 8em)
+);
+
+.home {
+   width: susy-span(3 of 6);
+   p {
+     color: blue;
+   }
+}
+
+

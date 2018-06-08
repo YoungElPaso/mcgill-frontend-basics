@@ -1,0 +1,21 @@
+{
+  "name": "mcGill-frontend-basics",
+  "version": "1.0.0",
+  "description": "A package that manages McGill frontend dependencies and some configuration and build steps.",
+  "scripts": {
+    "watch": "node-sass --include-path node_modules/susy/sass -r --output-style expanded  -w sass/ -o css/",
+    "build": "node-sass --include-path node_modules/susy/sass -r --output-style compressed sass/ -o css/"
+  },
+  "keywords": [
+    "css",
+    "sass"
+  ],
+  "author": "Jesse A Sutherland",
+  "license": "ISC",
+  "dependencies": {
+    "susy": "^3.0.5"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  }
+}
