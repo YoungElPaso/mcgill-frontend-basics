@@ -1,0 +1,40 @@
+// Test some basic susy functions.
+
+// Need to import susy.
+@import "../node_modules/susy/sass/susy";
+
+// Import the sass-true testing framework.
+@import "../node_modules/sass-true/sass/true";
+
+
+// Test basic sass math.  
+@include describe('sass math - addition function') {
+  @include it('Returns true if summing the input equates to the output') {
+    @include assert {
+      // Define some sass to test compile. Basic math.
+      @include output {
+        width: 2em + 14em;
+      }
+      // Expected CSS output.
+      @include expect {
+        width: 16em;
+      }
+    }
+  }
+}
+
+// Test susy span function.
+@include describe('susy span - a grid function') {
+  @include it('Returns true if the input using span equates to the output') {
+    @include assert {
+      // Use the susy span function to specify a width in sass.
+      @include output {
+        width: span(6 of 12);
+      }
+      // Expected css output.
+      @include expect {
+        width: 49.15254%;
+      }
+    }
+  }
+}
