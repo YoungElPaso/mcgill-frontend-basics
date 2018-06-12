@@ -1,21 +1,38 @@
 {
-  "name": "mcGill-frontend-basics",
+  "name": "mcgill-frontend-basics",
   "version": "1.0.0",
   "description": "A package that manages McGill frontend dependencies and some configuration and build steps.",
   "scripts": {
-    "watch": "node-sass --include-path node_modules/susy/sass -r --output-style expanded  -w sass/ -o css/",
-    "build": "node-sass --include-path node_modules/susy/sass -r --output-style compressed sass/ -o css/"
+    "watch": "node-sass --include-path node_modules/susy/sass -r --output-style expanded -w sass/ -o css/",
+    "build": "node-sass --include-path node_modules/susy/sass -r --output-style compressed sass/ -o css/",
+    "dev": "echo 'this should build a style guide HTML page and launch a dev server and serve the style guide along w/ a watch process for node-sass' ",
+    "test": "echo 'this should do some tests to see if the basics like scss->css is working and if susy is imported' "
+  },
+  "config": {
+    "dev-port": "8080",
+    "sass-out": "css",
+    "sass-in": "sass"
+  },
+  "directories": {
+    "test": "./test",
+    "doc": "./doc"
   },
   "keywords": [
     "css",
     "sass"
   ],
   "author": "Jesse A Sutherland",
+  "repository": "github:youngelpaso/mcgill-frontend-basics",
   "license": "ISC",
   "dependencies": {
     "susy": "^3.0.5"
   },
   "devDependencies": {
+    "//": [
+      "Need a server for serving the style guide, TODO",
+      "Need a test runner for running tests, TODO",
+      "Need to provide a way to over-ride build/dev w/ a config file that specifies sass-in/out and port etc TODO, this means scripts dir and dev/build/test/scripts"
+    ],
     "node-sass": "git+https://github.com/sass/node-sass.git#v4.7.0"
   }
 }
