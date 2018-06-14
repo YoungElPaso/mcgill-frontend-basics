@@ -35,6 +35,7 @@
       "Need to provide a way to over-ride build/dev w/ a config file that specifies sass-in/out and port etc TODO, this means scripts dir and dev/build/test/scripts"
     ],
     "mocha": "^5.2.0",
+    "pug-cli": "^1.0.0-alpha6",
     "sass-true": "^4.0.0"
   }
 }
