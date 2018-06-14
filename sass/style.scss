@@ -1,0 +1,10 @@
+@import 'susy';
+
+// NB: could include other sass files, like a normalizer etc.
+
+// The styles for the style guide nav items etc.
+@import 'styleguide';
+
+$susy: (
+  'columns': susy-repeat(6, 8em)
+);
