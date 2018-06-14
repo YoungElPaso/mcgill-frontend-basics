@@ -13,14 +13,17 @@ doctype html
 html
   include layout-includes/head.pug
   body
+
     include layout-includes/nav.pug
     h1 Style Guide
     p This style guide includes some components and generic HTML tags.
     
     #components
+     foobar
+      #{allComponents}
       //- TODO: be nice to iterate over all components in the directory automatically like:  each component in [], but include names cant be dynamic.
-      +component("Standard Block")
-        include components/standard-block.html      
+      //- +component("Standard Block")
+      //-   include components/standard-block.html      
    
     // TODO: these should be an include as well perhaps...
     #html-tags
