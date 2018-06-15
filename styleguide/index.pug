@@ -2,6 +2,7 @@
 
 //- Define some mixins.
 //- Lays out a component.
+//- TODO: this mixin should be its own include or deleted.
 mixin component(name)
   .component-example
     h1= name
@@ -19,11 +20,14 @@ html
     p This style guide includes some components and generic HTML tags.
     
     #components
-     foobar
-      #{allComponents}
-      //- TODO: be nice to iterate over all components in the directory automatically like:  each component in [], but include names cant be dynamic.
-      //- +component("Standard Block")
-      //-   include components/standard-block.html      
+      if allComponents
+        // - using the allComponents variable to include all components in /components. 
+        div !{allComponents}
+      else
+        // - no allComponents variable given.
+        //- TODO: be nice to iterate over all components in the directory automatically like:  each component in [], but include names cant be dynamic.
+        //- +component("Standard Block")
+        //-   include components/standard-block.html      
    
     // TODO: these should be an include as well perhaps...
     #html-tags
