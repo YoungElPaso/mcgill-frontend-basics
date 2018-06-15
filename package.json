@@ -35,6 +35,7 @@
       "Need a test runner for running tests, TODO",
       "~~Need to provide a way to over-ride build/dev w/ a config file that specifies sass-in/out and port etc, this means scripts dir and dev/build/test/scripts -- Not true in fact! learned I can reference config in scripts object, which makes sense!~~"
     ],
+    "glob": "^7.1.2",
     "mocha": "^5.2.0",
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6",
