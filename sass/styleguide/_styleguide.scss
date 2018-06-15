@@ -1,0 +1,11 @@
+nav#menu {
+  background:lightgrey;
+  padding: 1em;
+  width: susy-span(6 of 6);
+}
+
+.component-example {
+  border: 1px lightgrey solid;
+  margin: 0 0 1em 0;
+  padding: 0.5em 0 1em;
+}
