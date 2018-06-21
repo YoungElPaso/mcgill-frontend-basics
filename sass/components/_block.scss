@@ -1,0 +1,9 @@
+// Importing colour variables.
+@import '../theme/colors';
+
+// Defines an example block component.
+.block {
+  border: 1px $neutral-border solid;
+  // This is just an example, this should likely use a mixin or a more atomic class imported from layouts.
+  width: susy-span(6 of 6);
+}
