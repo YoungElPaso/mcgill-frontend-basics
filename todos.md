@@ -11,8 +11,11 @@
   - package.json needs to include packages for Riot (maybe Riot SSR) as well as Twig.  Riot is no problem, and I think there's Twig compilers.
 
  ### Refactor some build scripts to support:
-  - styleguide build with watch
-  - styleguide css build (could just be build, then copy)
+  - styleguide build with watch -- DONE
+  - styleguide css build (could just be build, then copy) -- DONE
+  -- NEED to clean up all the old scripts
+  -- NEED to provide dev/prod sass output style switching mechanism.
+
 
  ### Dont need to split styleguide from main package - could do, but I think it should be intrinsic to theme work
 

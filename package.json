@@ -9,8 +9,8 @@
     "dev:serve": "serve -n -p $npm_package_config_devPort",
     "test": "./node_modules/mocha/bin/mocha test/susy-test.js",
     "build:styleguide": "node ./styleguide/styleguide-build.js > ./styleguide/index.html && cp css/styleguide.css styleguide/css/styleguide.css",
-    "dev": "npm run dev:serve & npm-watch dev:builds",
-    "dev:builds": "npm run build:sass && npm run build:styleguide"
+    "dev:builds": "npm run build:sass && npm run build:styleguide",
+    "dev": "npm run dev:serve & npm-watch dev:builds"
   },
   "watch": {
     "dev:builds": {
