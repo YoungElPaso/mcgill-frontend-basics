@@ -1,5 +1,4 @@
 node_modules
 css
 styleguide/css
-styleguide/*.html
-gts
+styleguide/**/*.html
