@@ -3,18 +3,20 @@
   "version": "1.0.0",
   "description": "A package that manages McGill frontend dependencies and some configuration and build steps.",
   "scripts": {
-    "old-watch": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle -w $npm_package_config_sassIn -o $npm_package_config_sassOut",
-    "build:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_prodOutputStyle $npm_package_config_sassIn -o $npm_package_config_sassOut",
-    "old-dev": "npm run build && serve -n -p $npm_package_config_devPort & npm run old-watch",
+    "dev:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle $npm_package_config_sassIn -o $npm_package_config_sassOut",
+    "prod:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_prodOutputStyle $npm_package_config_sassIn -o $npm_package_config_sassOut",
     "dev:serve": "serve -n -p $npm_package_config_devPort",
-    "test": "./node_modules/mocha/bin/mocha test/susy-test.js",
-    "build:styleguide": "node ./styleguide/styleguide-build.js > ./styleguide/index.html && cp css/styleguide.css styleguide/css/styleguide.css",
-    "dev:builds": "npm run build:sass && npm run build:styleguide",
-    "dev": "npm run dev:serve & npm-watch dev:builds"
+    "dev:builds": "npm run dev:sass && npm run styleguide",
+    "dev": "npm run dev:serve & npm-watch dev:builds",
+    "styleguide": "node ./styleguide/styleguide-build.js > ./styleguide/index.html && cp css/styleguide.css styleguide/css/styleguide.css",
+    "test": "./node_modules/mocha/bin/mocha test/susy-test.js"
   },
   "watch": {
     "dev:builds": {
-      "patterns": ["styleguide/components", "sass"],
+      "patterns": [
+        "styleguide/components",
+        "sass"
+      ],
       "extensions": "html,scss,js",
       "quiet": false
     }
