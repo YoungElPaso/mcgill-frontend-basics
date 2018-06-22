@@ -15,8 +15,11 @@
   "watch": {
     "dev:builds": {
       "patterns": [
-        "components",
-        "sass"
+        "./"
+      ],
+      "ignore": [
+        "styleguide",
+        "test"
       ],
       "extensions": "html,scss,js",
       "quiet": false
