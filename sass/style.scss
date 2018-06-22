@@ -1,10 +1,18 @@
-@import 'susy';
-
 // NB: could include other sass files, like a normalizer etc.
 
-// The styles for the style guide nav items etc.
-@import 'styleguide';
+// Import the susy library.
+@import 'susy';
 
-$susy: (
-  'columns': susy-repeat(6, 8em)
-);
+// Import susy implementation.
+// Includes grid config etc.
+// NB: Could include other types of layouts!
+@import 'layouts/susy';
+
+// Import an example component.
+// NB: could also aggregate them into a components/all partial.
+@import 'components/block';
+
+// Import themeing.
+// Includes color variables etc.
+// NB: none of this should be structural, but rather thematic overrides and mainly adding colour.
+@import 'theme/colors';

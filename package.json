@@ -3,17 +3,31 @@
   "version": "1.0.0",
   "description": "A package that manages McGill frontend dependencies and some configuration and build steps.",
   "scripts": {
-    "watch": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle -w $npm_package_config_sassIn -o $npm_package_config_sassOut",
-    "build": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_prodOutputStyle $npm_package_config_sassIn -o $npm_package_config_sassOut",
-    "dev": "echo 'this should build a style guide HTML page and launch a dev server and serve the style guide along w/ a watch process for node-sass' &&serve .",
+    "dev:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle $npm_package_config_sassIn -o $npm_package_config_sassOut",
+    "prod:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_prodOutputStyle $npm_package_config_sassIn -o $npm_package_config_sassOut",
+    "dev:serve": "serve -n -p $npm_package_config_devPort",
+    "dev:builds": "npm run dev:sass && npm run styleguide",
+    "dev": "npm run dev:serve & npm-watch dev:builds",
+    "styleguide": "node ./styleguide/styleguide-build.js > ./styleguide/index.html && cp css/styleguide.css styleguide/css/styleguide.css",
     "test": "./node_modules/mocha/bin/mocha test/susy-test.js"
   },
+  "watch": {
+    "dev:builds": {
+      "patterns": [
+        "styleguide/components",
+        "sass"
+      ],
+      "extensions": "html,scss,js",
+      "quiet": false
+    }
+  },
   "config": {
-    "devPort": "8080",
+    "devPort": "3000",
     "sassOut": "css",
     "sassIn": "sass",
     "prodOutputStyle": "compressed",
-    "devOutputStyle": "expanded"
+    "devOutputStyle": "expanded",
+    "componentsDir": "styleguide/components"
   },
   "directories": {
     "test": "./test"
@@ -30,13 +44,11 @@
     "node-sass": "git+https://github.com/sass/node-sass.git#v4.7.0"
   },
   "devDependencies": {
-    "//": [
-      "Need a server for serving the style guide, TODO",
-      "Need a test runner for running tests, TODO",
-      "~~Need to provide a way to over-ride build/dev w/ a config file that specifies sass-in/out and port etc, this means scripts dir and dev/build/test/scripts -- Not true in fact! learned I can reference config in scripts object, which makes sense!~~"
-    ],
+    "glob": "^7.1.2",
     "mocha": "^5.2.0",
+    "npm-watch": "^0.3.0",
+    "pug": "^2.0.3",
     "sass-true": "^4.0.0",
-    "serve": "^8.2.0"
+    "serve": "^9.0.0"
   }
 }
