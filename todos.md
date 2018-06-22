@@ -16,8 +16,4 @@
   -- NEED to clean up all the old scripts -- DONE
   -- NEED to provide dev/prod sass output style switching mechanism. -- DONE - just different scripts now
   -- TODO: clean up files not in use
-
-
- ### Dont need to split styleguide from main package - could do, but I think it should be intrinsic to theme work
-
- ### Node-sass part of package is good to go, could be shipped by itself, without styleguide right now. But I want to include styleguide with some example components because I think its important!
+  -- TODO: continue clean up and add riot stuff, which means add riot output dir to ignore in watch config!
