@@ -1,3 +1,4 @@
+
 {
   "name": "mcgill-frontend-basics",
   "version": "1.0.0",
@@ -14,7 +15,7 @@
   "watch": {
     "dev:builds": {
       "patterns": [
-        "styleguide/components",
+        "components",
         "sass"
       ],
       "extensions": "html,scss,js",
@@ -27,7 +28,7 @@
     "sassIn": "sass",
     "prodOutputStyle": "compressed",
     "devOutputStyle": "expanded",
-    "componentsDir": "styleguide/components"
+    "componentsDir": "components"
   },
   "directories": {
     "test": "./test"
