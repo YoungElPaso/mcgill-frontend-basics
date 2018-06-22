@@ -13,8 +13,8 @@
  ### Refactor some build scripts to support:
   - styleguide build with watch -- DONE
   - styleguide css build (could just be build, then copy) -- DONE
-  -- NEED to clean up all the old scripts
-  -- NEED to provide dev/prod sass output style switching mechanism.
+  -- NEED to clean up all the old scripts -- DONE
+  -- NEED to provide dev/prod sass output style switching mechanism. -- DONE - just different scripts now
 
 
  ### Dont need to split styleguide from main package - could do, but I think it should be intrinsic to theme work
