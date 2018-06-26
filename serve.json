@@ -1,7 +1,0 @@
-{
-  "directoryListing": false,
-  "redirects": [
-    {"source": "/", "destination": "/styleguide/index.html"},
-    {"source": "./css/styleguide.css", "destination": "/styleguide/css/styleguide.css"}
-  ]
-}
