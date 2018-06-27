@@ -16,7 +16,7 @@ var rootDir = process.cwd();
 
 // Set up some paths for the components and styleguide itself.
 var styleguidePath = process.cwd() + '/' + styleguideDir + '/';
-var componentsPath = process.cwd() + '/' + componentsDir;
+var componentsPath = process.cwd() + '/src/' + componentsDir;
 
 
 // Check if we have components dir, if not, exit(?).
@@ -57,7 +57,7 @@ function buildComponents(components) {
   h1='${fileName.split('.html')[0]}'
   hr
   .component-wrapper
-    include ./${componentsDir}/${fileName}
+    include ./src/${componentsDir}/${fileName}
     `;
     // HACK: gotta include filename opt for include in template. Weird.
     // Make a function to call pug compile.
