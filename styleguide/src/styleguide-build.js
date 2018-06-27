@@ -80,7 +80,7 @@ function buildComponents(components) {
   };
   
   // Renders style guide template and variables.
-  var html = pug.renderFile(process.cwd() + '/' + styleguideDir + '/' + './index.pug', locals);
+  var html = pug.renderFile(process.cwd() + '/' + styleguideDir + '/src/' + './index.pug', locals);
   
   // Output the HTML rendered from style guide template and variables.
   // TODO this could actually write to a file instead of STDOUT.
