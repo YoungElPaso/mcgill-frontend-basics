@@ -1,4 +1,3 @@
 node_modules
 css
-styleguide/css
-styleguide/build/**/*.html
+styleguide/build

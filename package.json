@@ -6,11 +6,12 @@
   "scripts": {
     "dev:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle ./src/$npm_package_config_sassIn -o ./build/$npm_package_config_sassOut",
     "prod:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_prodOutputStyle ./src/$npm_package_config_sassIn -o ./build/$npm_package_config_sassOut",
-    "dev:serve": "serve -n -p $npm_package_config_devPort ./styleguide",
-    "dev:builds": "npm run dev:sass && npm run styleguide",
+    "postinstall": "mkdir ./styleguide/build",
+    "dev:serve": "serve -n -p $npm_package_config_devPort ./styleguide/build",
+    "dev:builds": "npm run dev:sass && npm run styleguide:css && npm run styleguide",
     "dev": "npm run dev:serve & npm-watch dev:builds",
     "styleguide": "node ./styleguide/src/styleguide-build.js > ./styleguide/build/index.html",
-    "styleguide:css": "cp build/css styleguide/build/css",
+    "styleguide:css": "cp -r build/css styleguide/build/",
     "test": "./node_modules/mocha/bin/mocha test/susy-test.js"
   },
   "watch": {
