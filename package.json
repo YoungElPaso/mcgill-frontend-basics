@@ -5,6 +5,7 @@
   "description": "A package that manages McGill frontend dependencies and some configuration and build steps.",
   "scripts": {
     "dev:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle ./src/$npm_package_config_sassIn -o ./build/$npm_package_config_sassOut",
+    "dev:sass:watch": "node-sass -w --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle ./src/$npm_package_config_sassIn -o ./build/$npm_package_config_sassOut",
     "prod:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_prodOutputStyle ./src/$npm_package_config_sassIn -o ./build/$npm_package_config_sassOut",
     "postinstall": "mkdir ./styleguide/build",
     "dev:serve": "serve -n -p $npm_package_config_devPort ./styleguide/build",
