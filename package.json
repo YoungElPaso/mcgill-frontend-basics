@@ -1,24 +1,27 @@
-
 {
   "name": "mcgill-frontend-basics",
   "version": "1.0.0",
   "description": "A package that manages McGill frontend dependencies and some configuration and build steps.",
   "scripts": {
-    "dev:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle $npm_package_config_sassIn -o $npm_package_config_sassOut",
-    "prod:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_prodOutputStyle $npm_package_config_sassIn -o $npm_package_config_sassOut",
-    "dev:serve": "serve -n -p $npm_package_config_devPort ./styleguide",
-    "dev:builds": "npm run dev:sass && npm run styleguide",
+    "dev:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle ./src/$npm_package_config_sassIn -o ./build/$npm_package_config_sassOut",
+    "dev:sass:watch": "node-sass -w --include-path node_modules/susy/sass -r --output-style=$npm_package_config_devOutputStyle ./src/$npm_package_config_sassIn -o ./build/$npm_package_config_sassOut",
+    "prod:sass": "node-sass --include-path node_modules/susy/sass -r --output-style=$npm_package_config_prodOutputStyle ./src/$npm_package_config_sassIn -o ./build/$npm_package_config_sassOut",
+    "postinstall": "mkdir ./styleguide/build",
+    "dev:serve": "serve -n -p $npm_package_config_devPort ./styleguide/build",
+    "dev:builds": "npm run dev:sass && npm run styleguide:css && npm run styleguide",
     "dev": "npm run dev:serve & npm-watch dev:builds",
-    "styleguide": "node ./styleguide/styleguide-build.js > ./styleguide/index.html && cp css/styleguide.css styleguide/css/styleguide.css",
+    "styleguide": "node ./styleguide/src/styleguide-build.js > ./styleguide/build/index.html",
+    "styleguide:css": "cp -r build/css styleguide/build/",
     "test": "./node_modules/mocha/bin/mocha test/susy-test.js"
   },
   "watch": {
     "dev:builds": {
       "patterns": [
-        "./"
+        "./src"
       ],
       "ignore": [
         "styleguide",
+        "build",
         "test"
       ],
       "extensions": "html,scss,js",
