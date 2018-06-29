@@ -15,7 +15,7 @@ Node-sass is an implementation of sass for Node that can compile *.scss files to
 We use susy for things like grids, so this package supports it as well. There's even a small set of tests to run to make sure it's working properly.
 
 ## Styleguide
-_screenshot tbd_
+![screenshot](https://user-images.githubusercontent.com/54349/42113596-c7785816-7bb9-11e8-940d-01861e8ece66.png "Screenshot")
 
 This package includes a set of scripts that will compile sass for production but it also has a few development scripts that will do things like watch the sass source folder for changes and automatically compile them as well as compile a styleguide to illustrate the resulting css.
 
