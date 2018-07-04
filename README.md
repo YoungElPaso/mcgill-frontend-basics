@@ -4,7 +4,34 @@ Just a little unofficial primer to getting started with frontend dev at McGillU.
 
 [![Build Status](https://travis-ci.org/YoungElPaso/mcgill-frontend-basics.svg)](https://travis-ci.org/YoungElPaso/mcgill-frontend-basics)
 
-## General Info...
+
+## Installation
+``` 
+  $ git clone https://github.com/youngelpaso/mcgill-frontend-basics
+  $ npm install
+```
+Optionally, post-install, to verify basic depenencies and setup run: 
+```
+  $ npm test
+```
+
+If all is well, the test script should result in 4 passing tests.
+
+## Usage
+This package sets up some basic scripts to aid in basic front-end tasks like *designing components*, *working on a theme* or otherwise testing front-end assets. The primary tasks are focused on: 
+  
+  1. Compiling sass->css
+  1. Creating a local styleguide to properly visualize the results of step 1.
+
+
+### To Begin
+The basic development script will watch the configured source directory and compile any changes (sass->css, maybe some JS later) and generate and serve the styleguide. This should be a good workflow for anyone. To get started just run:
+```
+  $npm run dev
+```
+And then start working on sass or component files (see examples below).
+
+## More Info
 This package contains basic configuration and scripts to get started using SASS (via node-sass) as well as a few other things that are useful for frontend development at McGill U.
 
 ## Node-sass
@@ -21,7 +48,7 @@ This package includes a set of scripts that will compile sass for production but
 
 The styleguide lives in its own directory and is compiled from two sources: a components directory, and the sass directory.  The components directory can include any html snippet (and soon Riot tag), and maybe some other types of templates as well.  When it is built, a single page HTML file is served at localhost:3000 with all the associated HTML components rendered out and styled with whatever sass was also compiled.
 
-## Scripts...
+## Scripts
 This package uses several scripts to do things. They are all run from the command line like so:
 ```
 $ npm run <script>
@@ -40,7 +67,7 @@ Here's a condensed look at the most important:
   },
 ```
 
-### postinstall: 
+### postinstall 
 This just sets up a few required directories. This should run *once* immediately after installing the pacakge and not need to be run again.
 
 ### dev:sass:watch
@@ -64,4 +91,24 @@ This is the biggest script, compiled of other smaller ones. In order it:
 Using ``` $ npm run dev ``` is pretty much the only one (besides maybe 'test') that needs to be run locally for a developer to work with this package.
 
 ## Source file structure:
-_tbd_
+The structure of the source and builds directories are important. They should allow for a sensible approach to writing modular, well organized code for the front-end. Therefore the default approach is to break down the source into the following (sub)directories:
+
+```
+  ./src
+    -> ./components (*.html, *.js, *.pug, e.g. standard-block.html)
+    -> ./sass (*.scss)
+       -> ./components (e.g. _block.scss)
+       -> ./layouts (e.g. _susy.scss)
+       -> ./theme (e.g. _colors.scss)
+       -> ./utilities (e.g. _debug.scss)
+  ./style.scss (the main source file to compile into css)
+  ./styleguide.scss (the source file for the styleguide css)
+```
+All of the above will get compiled/copied into two destinations:
+```
+  ./build/css (*.css)
+  ./styleguide/build
+     -> ./css (styleguide.css)
+     -> ./index.html
+```
+It is *not* recommended that either build destination is committed. They are for local development and sass should be compiled automatically elsewhere for production (i.e. a CI/QA step). Hence those directories are both under _.gitignore_.
