@@ -31,6 +31,18 @@ The basic development script will watch the configured source directory and comp
 ```
 And then start working on sass or component files (see examples below).
 
+
+### Example
+To style a new component, for example a 'call to action', you need markup (HTML) and some CSS (sass). See example code in:
+```
+  ./src/components/call-to-action.html
+  ./src/sass/components/_cta.scss
+```
+*NB:* The sass file above will need to be imported in style.scss (and optionally styleguide.scss) so it is compiled into the main css files.
+
+Running ``` $ npm run dev ``` will compile any changes to the above source files and run the styleguide, and include the markup included in the 'call-to-action.html' template.
+
+
 ## More Info
 This package contains basic configuration and scripts to get started using SASS (via node-sass) as well as a few other things that are useful for frontend development at McGill U.
 
