@@ -1,0 +1,23 @@
+// Importing colour variables.
+@import '../theme/colors';
+
+// Importing dependency: buttons.
+@import './buttons';
+
+// Defines an example block component.
+.cta {
+  border: 3px $heavy-border solid;
+  border-radius: 5px;
+  .cta-body,
+  .cta-header {
+    padding: 1em;
+  }
+  .cta-header {
+    color: $exciting-pink;
+    font-size: 140%;
+  }
+  .cta-body {
+    background: $exciting-pink;
+    padding: 0.5em 1.5em;
+  }
+}

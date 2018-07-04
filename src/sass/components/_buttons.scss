@@ -1,0 +1,22 @@
+// Importing colour variables.
+@import '../theme/colors';
+
+// Defines common button styles.
+.btn {
+  background: $exciting-blue;
+  border: 2px $exciting-yellow solid;  
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  font-size: 125%;
+  font-weight: 700;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+  text-align: center;
+  &:hover {
+    background: darken($exciting-blue, 20%);
+  }
+}
+a.btn {
+  text-decoration: none;
+}
