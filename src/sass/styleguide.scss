@@ -12,6 +12,9 @@
 // NB: could also aggregate them into a components/all partial.
 @import 'components/block';
 
+// Import an example component.
+@import 'components/cta';
+
 // Import themeing.
 // Includes color variables etc.
 // NB: none of this should be structural, but rather thematic overrides and mainly adding colour.
